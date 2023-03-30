@@ -22,9 +22,11 @@ sjf1、sjf2 和 sjf3 同时到达，sjf4 比 sjf3 晚 1000 ms 到达，sjf5 比 
 ![](img/stcftests.png)
 
 对于 HRRN，其每次调度寻找响应比最高的进程。响应比的计算方式是：
+
 $$
     ratio = 1 + \frac{等待时间}{预期执行时间}
 $$
+
 因此出现 sjf3, sjf4，sjf5 的交替执行，如图：
 ![](img/hrrntests.png)
 
@@ -35,12 +37,14 @@ stride 的结果如下：
 ![](img/stridetests.png)
 
 lottery 的结果如下：
+
 ![](img/lotterytests.png)
 
 ### MLFQ
 测试包含 3 个进程：mlfq3，mlfq4 和 mlfq5。3 个进程的运算内容基本一致，区别在于 mlfq4 模拟了前台进程，因此完成一部分计算后就会短暂休眠，而 mlfq3 和 mlfq5 模拟了后台进程，不休眠。
 
 总体来看 mlfq4 的优先级更高，因此更快完成。如图：
+
 ![](img/mlfqtests.png)
 
 ### EDF 和 RMS
@@ -56,10 +60,14 @@ lottery 的结果如下：
 
 使用 EDF 算法的理论结果如下：
 ![](img/edf_anal.png)
+
 实际结果与理论一致，未出现超时情况：
+
 ![](img/edftests.png)
 
 使用 RMS 算法的理论结果如下：
 ![](img/rms_anal.png)
+
 rms0 将在第一次执行时超时。实际结果与理论一致：
+
 ![](img/rmstests.png)
