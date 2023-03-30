@@ -28,6 +28,7 @@ $$
 $$
 
 因此出现 sjf3, sjf4，sjf5 的交替执行，如图：
+
 ![](img/hrrntests.png)
 
 ### stride 和 lottery
